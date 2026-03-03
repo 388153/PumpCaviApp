@@ -13,7 +13,7 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 st.subheader("Prediction of Cavitation in Centrifugal Pump")
 
 st.warning(":orange[ตัวอย่าง ค่าการสั่นสะเทือนในแนวแกน x,y,z และค่าเป้าหมาย ที่ใช้ในการสร้าง classifier model] ")
-vibra_input = pd.read_csv('/Users/patiparnboonruam/Web App/Cavi.csv')
+vibra_input = pd.read_csv('Cavi.csv')
 st.write(vibra_input.sample(3))
 
 X = vibra_input[['Acceleration x (m/s^2)', 'Acceleration y (m/s^2)','Acceleration z (m/s^2)']]
