@@ -27,9 +27,9 @@ X_train_sc = scaler.fit_transform(X_train)
 X_test_sc = scaler.transform(X_test)
 
 #Load model
-with open('/Users/patiparnboonruam/Web App/Cavi_RF_model.pkl', 'rb') as file_RF:
+with open('Cavi_RF_model.pkl', 'rb') as file_RF:
     CaviRF = pickle.load(file_RF)
-with open('/Users/patiparnboonruam/Web App/Cavi_SVM_model.pkl', 'rb') as file_SVM:
+with open('Cavi_SVM_model.pkl', 'rb') as file_SVM:
     CaviSVM = pickle.load(file_SVM)
 st.info(':blue[กรุณาป้อนค่าแรงสั่นสะเทือนตามแนวแกน x, y, z เพื่อทำนายการเกิด คาวิเตชันในปั๋มหอยโข่ง]')
 
