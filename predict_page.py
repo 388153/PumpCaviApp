@@ -81,6 +81,7 @@ st.write(f"ที่ความแม่นยำเท่ากับ: {scoreS
 
 # Make a prediction using the XGBoost model
 predictionXGB = CaviXGB.predict(new_data_point_sc)
+st.write(predictionXGB)
 current_iconXGB = status_icons.get(predictionXGB[0], "⚙️")
 
 st.subheader(f"{current_iconXGB} :green[ปั๊มทำงานที่สะภาวะ:] {predictionXGB[0]}")
