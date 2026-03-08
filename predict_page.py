@@ -2,12 +2,12 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
+#from sklearn.model_selection import train_test_split
+#from sklearn.preprocessing import StandardScaler
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn.svm import SVC
 
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
+#from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 
 st.subheader("Prediction of Cavitation in Centrifugal Pump")
 
