@@ -35,7 +35,7 @@ with open('Cavi_SVM_model.pkl', 'rb') as file_SVM:
 with open('Cavi_XGB_model.pkl', 'rb') as file_XGB:
     CaviXGB = pickle.load(file_XGB)
 st.info(':blue[กรุณาป้อนค่าแรงสั่นสะเทือนตามแนวแกน x, y, z เพื่อทำนายการเกิด คาวิเตชันในปั๋มหอยโข่ง]')
-col1, col2, col3 = st.columens(3)
+col1, col2, col3 = st.columns(3)
 # Create New Data Input for Prediction
 with col1:
     vx = st.number_input('Vibration X', value=0.0)
