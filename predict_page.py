@@ -67,11 +67,12 @@ with col3:
 # Make a prediction using the Random Forest model
     predictionRF = CaviRF.predict(new_data_point_sc)
     current_iconRF = status_icons.get(predictionRF[0], "⚙️")
-
+    
     st.subheader(f"{current_iconRF} :green[ปั๊มทำงานที่สะภาวะ:] {predictionRF[0]}")
     y_pred_rf = CaviRF.predict(X_test_sc)
     scoreRF = accuracy_score(y_test, y_pred_rf)
-    st.write(f"ที่ความแม่นยำเท่ากับ: {scoreRF:.2f}")
+    st.write(f"ที่ความแม่นยำ RF model เท่ากับ: {scoreRF:.2f}")
+    
 with col4:
     # Make a prediction using the SVM model
     predictionSVM = CaviSVM.predict(new_data_point_sc)
@@ -81,4 +82,4 @@ with col4:
 
     y_pred_svm = CaviSVM.predict(X_test_sc)
     scoreSVM = accuracy_score(y_test, y_pred_svm)
-    st.write(f"ที่ความแม่นยำเท่ากับ: {scoreSVM:.2f}")
+    st.write(f"ที่ความแม่นยำ SVM model เท่ากับ: {scoreSVM:.2f}")
