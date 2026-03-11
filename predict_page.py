@@ -62,22 +62,23 @@ status_icons = {
     "50Cavi": "⚠️",
     "Cavi": "❌"
 }
-
+col3, col4 = st.columns(2)
+with col3:
 # Make a prediction using the Random Forest model
-predictionRF = CaviRF.predict(new_data_point_sc)
-current_iconRF = status_icons.get(predictionRF[0], "⚙️")
+    predictionRF = CaviRF.predict(new_data_point_sc)
+    current_iconRF = status_icons.get(predictionRF[0], "⚙️")
 
-st.subheader(f"{current_iconRF} :green[ปั๊มทำงานที่สะภาวะ:] {predictionRF[0]}")
-y_pred_rf = CaviRF.predict(X_test_sc)
-scoreRF = accuracy_score(y_test, y_pred_rf)
-st.write(f"ที่ความแม่นยำเท่ากับ: {scoreRF:.2f}")
+    st.subheader(f"{current_iconRF} :green[ปั๊มทำงานที่สะภาวะ:] {predictionRF[0]}")
+    y_pred_rf = CaviRF.predict(X_test_sc)
+    scoreRF = accuracy_score(y_test, y_pred_rf)
+    st.write(f"ที่ความแม่นยำเท่ากับ: {scoreRF:.2f}")
+with col4:
+    # Make a prediction using the SVM model
+    predictionSVM = CaviSVM.predict(new_data_point_sc)
+    current_iconSVM = status_icons.get(predictionSVM[0], "⚙️")
 
-# Make a prediction using the SVM model
-predictionSVM = CaviSVM.predict(new_data_point_sc)
-current_iconSVM = status_icons.get(predictionSVM[0], "⚙️")
+    st.subheader(f"{current_iconSVM} :green[ปั๊มทำงานที่สะภาวะ:] {predictionSVM[0]}")
 
-st.subheader(f"{current_iconSVM} :green[ปั๊มทำงานที่สะภาวะ:] {predictionSVM[0]}")
-
-y_pred_svm = CaviSVM.predict(X_test_sc)
-scoreSVM = accuracy_score(y_test, y_pred_svm)
-st.write(f"ที่ความแม่นยำเท่ากับ: {scoreSVM:.2f}")
+    y_pred_svm = CaviSVM.predict(X_test_sc)
+    scoreSVM = accuracy_score(y_test, y_pred_svm)
+    st.write(f"ที่ความแม่นยำเท่ากับ: {scoreSVM:.2f}")
