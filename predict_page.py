@@ -7,15 +7,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
-
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 
-st.subheader("Prediction of Cavitation in Centrifugal Pump")
+st.subheader("Web App for Prediction of Cavitation in Centrifugal Pump")
 
 st.warning(":orange[ตัวอย่าง ค่าการสั่นสะเทือนในแนวแกน x,y,z และค่าเป้าหมาย ที่ใช้ในการสร้าง classifier model] ")
 vibra_input = pd.read_csv('Cavi.csv')
-
-st.write(vibra_input.sample(3))
+click1 = st.button("Click Here")
+if click1:
+    st.write(vibra_input.sample(3))
 
 X = vibra_input[['Acceleration x (m/s^2)', 'Acceleration y (m/s^2)','Acceleration z (m/s^2)']]
 y = vibra_input['Target']
