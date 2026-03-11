@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 
 st.subheader("Web App for Prediction of Cavitation in Centrifugal Pump")
 
-st.warning(":orange[ตัวอย่าง ค่าการสั่นสะเทือนในแนวแกน x,y,z และค่าเป้าหมาย ที่ใช้ในการสร้าง classifier model] ")
+st.warning(":orange[ตัวอย่าง ค่าการสั่นสะเทือนในแนวแกน x,y,z และค่าเป้าหมาย ที่ใช้ในการสร้าง classifier model โปรด click] ")
 vibra_input = pd.read_csv('Cavi.csv')
 click1 = st.button("Click Here")
 if click1:
@@ -35,11 +35,14 @@ with open('Cavi_SVM_model.pkl', 'rb') as file_SVM:
 with open('Cavi_XGB_model.pkl', 'rb') as file_XGB:
     CaviXGB = pickle.load(file_XGB)
 st.info(':blue[กรุณาป้อนค่าแรงสั่นสะเทือนตามแนวแกน x, y, z เพื่อทำนายการเกิด คาวิเตชันในปั๋มหอยโข่ง]')
-
+col1, col2, col3 = st.columens(3)
 # Create New Data Input for Prediction
-vx = st.number_input('Vibration X', value=0.0)
-vy = st.number_input('Vibration Y', value=0.0)
-vz = st.number_input('Vibration Z', value=0.0)
+with col1:
+    vx = st.number_input('Vibration X', value=0.0)
+with col2:
+    vy = st.number_input('Vibration Y', value=0.0)
+with col3:
+    vz = st.number_input('Vibration Z', value=0.0)
 
 # Create a DataFrame for the new data point
 new_data_point = pd.DataFrame([{
