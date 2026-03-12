@@ -34,6 +34,7 @@ with open('Cavi_SVM_model.pkl', 'rb') as file_SVM:
     CaviSVM = pickle.load(file_SVM)
 with open('Cavi_XGB_model.pkl', 'rb') as file_XGB:
     CaviXGB = pickle.load(file_XGB)
+ ###### INPUT BY USER   
 st.info(':blue[กรุณาป้อนค่าแรงสั่นสะเทือนตามแนวแกน x, y, z เพื่อทำนายการเกิด คาวิเตชันในปั๋มหอยโข่ง]')
 col1, col2, col3 = st.columns(3)
 # Create New Data Input for Prediction
@@ -43,7 +44,8 @@ with col2:
     vy = st.number_input('ตามแนวแกน Y $(m/s^2)$', value=0.0)
 with col3:
     vz = st.number_input('ตามแนวแกน Z $(m/s^2)$', value=0.0)
-
+##### INPUT BY APP
+#####
 # Create a DataFrame for the new data point
 new_data_point = pd.DataFrame([{
     'Acceleration x (m/s^2)': vx,
